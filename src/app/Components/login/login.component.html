@@ -1,0 +1,27 @@
+<div>
+    <div *ngIf="!status">
+        <div class="alert alert-danger" >
+            Please Enter Valid Credentials
+        </div>
+    </div>
+
+    <div>
+        <form class="authneticate-form" [formGroup]="loginForm" (ngSubmit)="submitForm()">
+            <div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email.." formControlName="Email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" formControlName="Password"/>
+                </div>
+            </div>
+            <div>
+                <label>Create a new Account : </label>
+                <a href="/register">Register</a>
+            </div>
+            <div>
+                <button [disabled]="!loginForm.valid" type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
